@@ -5,6 +5,7 @@ import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import { useConvex } from "convex/react";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
+import SideNav from './_components/SideNav';
 
 export default function DashBoardLayout({ children,
 }: Readonly<{
@@ -24,11 +25,18 @@ export default function DashBoardLayout({ children,
    }
     
   return (
-    <html lang="en">
-      <body>
-   {children}
-   <Toaster></Toaster>
-      </body>
-    </html>
+    <>
+    
+     <div className=' grid grid-cols-4'>
+         <div>
+          <SideNav></SideNav>
+         </div>
+         <div className=' grid-cols-3'>
+         {children}
+         </div>
+   
+   
+   </div>
+    </>
   );
 }

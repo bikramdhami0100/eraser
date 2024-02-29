@@ -1,4 +1,5 @@
 "use client"
+import { Toaster } from '@/components/ui/sonner';
 import { api } from '@/convex/_generated/api';
 import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs';
 import { useMutation } from 'convex/react';
@@ -28,6 +29,7 @@ function CreateTeam() {
      }
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
+
       <div className="max-w-md p-6 bg-white shadow-md rounded-md">
         <div className="flex items-center justify-center">
           <Image src="/vercel.svg" alt="image" height={100} width={100} />
@@ -49,6 +51,7 @@ function CreateTeam() {
           }} disabled={!(teamName&&teamName.length>0)} className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-400">Create</button>
         </div>
       </div>
+      <Toaster></Toaster>
     </div>
   )
 }
