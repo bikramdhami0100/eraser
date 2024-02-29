@@ -28,9 +28,7 @@ function Dashboard() {
   return (
     <div>
        dashoboard
-       <Button>
-       <LogoutLink>Logout</LogoutLink>
-       </Button>
+       
     </div>
   )
 }

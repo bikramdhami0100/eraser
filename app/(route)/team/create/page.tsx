@@ -1,4 +1,5 @@
 "use client"
+import { Button } from '@/components/ui/button';
 import { Toaster } from '@/components/ui/sonner';
 import { api } from '@/convex/_generated/api';
 import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs';
@@ -46,9 +47,9 @@ function CreateTeam() {
             className="w-full border border-gray-300 rounded-md px-4 py-2 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-400"
             placeholder="Enter team name"
           />
-          <button onClick={()=>{
+          <Button onClick={()=>{
              createNewTeam()
-          }} disabled={!(teamName&&teamName.length>0)} className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-400">Create</button>
+          }} disabled={!(teamName&&teamName.length>0)} className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-400">Create</Button>
         </div>
       </div>
       <Toaster></Toaster>
