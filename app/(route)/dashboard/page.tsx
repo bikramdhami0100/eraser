@@ -4,9 +4,11 @@ import { api } from '@/convex/_generated/api';
 import { LogoutLink, useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs'
 import { useConvex, useMutation, useQuery } from 'convex/react';
 import React, { useEffect } from 'react'
+import Header from './_components/Header';
+import FList from './_components/FList';
 
 function Dashboard() {
-  const {user}:any=useKindeBrowserClient();
+ const {user}:any=useKindeBrowserClient();
  const convex=useConvex();
 
  const createUser=useMutation(api?.user.createTask);
@@ -27,8 +29,8 @@ function Dashboard() {
   }
   return (
     <div>
-       dashoboard
-       
+       <Header></Header>
+       <FList></FList>
     </div>
   )
 }

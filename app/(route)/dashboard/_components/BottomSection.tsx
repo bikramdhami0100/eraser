@@ -14,7 +14,8 @@ import {
 
 import { Input } from "@/components/ui/input"
 
-function BottomSection({onFileCreate}:any) {
+function BottomSection({onFileCreate,totalfile}:any) {
+  console.log(totalfile);
   const [fname,setfname]=useState("")
   const menu=[
     {
@@ -74,10 +75,10 @@ function BottomSection({onFileCreate}:any) {
 
 
        <div className='h-4  mt-2 mb-1 rounded-full  bg-slate-600 w-full '>
-       <div className=' w-[40%] h-full rounded-full  bg-blue-600  '>
+       <div className={` h-full rounded-full  bg-blue-600  `} style={{width:`${totalfile&&(totalfile/5)*100}%`}}>
           </div>
        </div>
-       <h1 className=' text-[12px] w-full m-1'>1 out of 5 files</h1>
+       <h1 className=' text-[12px] w-full m-1'>{totalfile} out of 5 files</h1>
        <h1 className=' text-[12px] w-full m-1'><span>Upgrade</span> for unlimited access your files </h1>
     </div>
   )

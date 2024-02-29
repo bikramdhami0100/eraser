@@ -31,7 +31,7 @@ export default function DashBoardLayout({ children,
          <div>
           <SideNav></SideNav>
          </div>
-         <div className=' grid-cols-3'>
+         <div className=' col-span-3'>
          {children}
          </div>
    
