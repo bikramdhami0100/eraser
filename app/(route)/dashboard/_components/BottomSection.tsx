@@ -15,7 +15,7 @@ import {
 import { Input } from "@/components/ui/input"
 
 function BottomSection({onFileCreate,totalfile}:any) {
-  console.log(totalfile);
+
   const [fname,setfname]=useState("")
   const menu=[
     {

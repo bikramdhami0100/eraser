@@ -19,8 +19,38 @@ export const createFile=mutation({
     export const getFile= query({
      args: { teamId:v.string() },
      handler: async (ctx, args) => {
-       const task = await ctx.db.query("files").filter((q)=>q.eq(q.field("teamId"),args.teamId)).collect()
+       const task = await ctx.db.query("files").filter((q)=>q.eq(q.field("teamId"),args.teamId)).order("desc")
+       .collect()
    
        return task;
      },
    });
+
+   //update files
+   export const updateDocument=mutation({
+    args:{
+        _id:v.id("files"),
+        document:v.string(),
+     },
+    handler: async(ctx, args)=> {
+         const result= await ctx.db.patch(args._id,{document:args.document})
+         return result;
+    }});
+    export const getFileById= query({
+      args: { _id:v.id("files") },
+      handler: async (ctx, args) => {
+        const task = await ctx.db.get(args._id)
+       
+    
+        return task;
+      },
+    });
+    export const updateWhiteboard=mutation({
+      args:{
+          _id:v.id("files"),
+           whiteboard:v.string()
+       },
+      handler: async(ctx, args)=> {
+           const result= await ctx.db.patch(args._id,{whiteboard:args.whiteboard})
+           return result;
+      }});

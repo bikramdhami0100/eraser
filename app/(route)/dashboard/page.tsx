@@ -29,7 +29,8 @@ function Dashboard() {
   }
   return (
     <div>
-       <Header></Header>
+        <Header user={user}></Header>
+     
        <FList></FList>
     </div>
   )

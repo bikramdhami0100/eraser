@@ -1,16 +1,17 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import TopSection, { Team } from './TopSection'
 import BottomSection from './BottomSection'
 import { useConvex, useMutation } from 'convex/react'
 import { api } from '@/convex/_generated/api'
 import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs'
 import { toast } from 'sonner'
+import { ContextFile } from '@/app/contextApi/ContextFile'
 
 function SideNav() {
   const [ActiveTeam,setActiveTeam]=useState<any>();
   const [tFile,settFile]=useState<number>();
-
+  const {FileList,setFileList}=useContext(ContextFile);
   const convex=useConvex();
  const setTeamInfo=(e:any)=>{
     
@@ -20,7 +21,7 @@ function SideNav() {
  const {user}:any=useKindeBrowserClient();
  const createFile=useMutation(api.files.createFile);
   const onFileCreate=(file:string)=>{
-   console.log(file);
+  
    
   
    createFile({
@@ -46,7 +47,7 @@ function SideNav() {
   
   const getFile=async()=>{
    const result=await convex.query(api.files.getFile,{teamId:ActiveTeam?._id});
-   console.log(result);
+    setFileList(result)
    settFile(result.length);
 
   }
