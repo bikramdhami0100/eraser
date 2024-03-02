@@ -29,9 +29,9 @@ function CreateTeam() {
        
      }
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
+    <div className="flex justify-center items-center h-screen ">
 
-      <div className="max-w-md p-6 bg-white shadow-md rounded-md">
+      <div className="max-w-md p-6 shadow-md rounded-md">
         <div className="flex items-center justify-center">
           <Image src="/vercel.svg" alt="image" height={100} width={100} />
         </div>
