@@ -15,7 +15,7 @@ function Canva({triggersave,fileid,fileData}:{triggersave:any,fileid:any,fileDat
             whiteboard:JSON.stringify(whiteboardData)
 }).then((res)=>{
     if (res) {
-         console.log(res);
+
           toast("whiteboard is updated successfully !!")
     }
 }).catch((e)=>{

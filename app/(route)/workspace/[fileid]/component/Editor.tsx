@@ -11,8 +11,7 @@ import { useMutation } from 'convex/react';
 import { api } from '@/convex/_generated/api';
 import { toast } from 'sonner';
 function Editor({triggersave,fileid,fileData}:{triggersave:any,fileid:any,fileData:any}) {
-  
-  console.log("this is file id  file data",fileData)
+
   const ref =useRef<EditorJS>();
 const updateDocument=useMutation(api.files.updateDocument);
   const rawDoc={
@@ -84,7 +83,7 @@ const OnSaveDocument=()=>{
         toast("error occure here")
       })
     }).catch((error) => {
-      console.log('Saving failed: ', error)
+      toast('Saving failed: ', error)
     });
     
     
