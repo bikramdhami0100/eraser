@@ -30,37 +30,37 @@ function FList() {
   const { user }: any = useKindeBrowserClient();
   const { FileList, setFileList } = useContext(ContextFile);
   const [flist, setFlist] = useState<any>();
-  console.log(FileList);
+
   useEffect(() => {
     FileList && setFlist(FileList);
-    console.log("this is filelist", flist);
+
   }, [FileList]);
 
   return (
     <div className=" mt-5">
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+        <table className="min-w-full divide-y-2 divide-gray-200  text-sm">
           <thead className="ltr:text-left rtl:text-right">
             <tr>
-              <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+              <td className="whitespace-nowrap px-4 py-2 font-medium ">
                 File Name
               </td>
-              <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+              <td className="whitespace-nowrap px-4 py-2 font-medium ">
                 Created At
               </td>{" "}
-              <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+              <td className="whitespace-nowrap px-4 py-2 font-medium ">
                 Edited
               </td>{" "}
-              <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+              <td className="whitespace-nowrap px-4 py-2 font-medium ">
                 Author
               </td>
             </tr>
           </thead>
 
-          <tbody className="divide-y divide-gray-200 cursor-pointer" >
+          <tbody className="divide-y cursor-pointer" >
             {FileList &&
               FileList?.map((item: File, index: number) => (
-                <tr className="odd:bg-gray-50" onClick={()=>{router.push(`/workspace/${item?._id}`)}}>
+                <tr className="" onClick={()=>{router.push(`/workspace/${item?._id}`)}}>
                   <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                     {item.fileName}
                   </td>

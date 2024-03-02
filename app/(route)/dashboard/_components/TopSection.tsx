@@ -71,7 +71,7 @@ function TopSection({ setTeamInfo }: any) {
 
   return (
     <div className="relative">
-      <div className="h-[40px] p-4 w-full bg-slate-400 hover:bg-slate-600 rounded-lg flex flex-col justify-center items-center">
+      <div className="h-[40px] p-4 w-full  hover:bg-slate-600 rounded-lg flex flex-col justify-center items-center">
         <Popover>
           <PopoverTrigger>
             <div className="flex justify-start items-center">

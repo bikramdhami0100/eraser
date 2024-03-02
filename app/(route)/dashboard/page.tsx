@@ -6,6 +6,7 @@ import { useConvex, useMutation, useQuery } from 'convex/react';
 import React, { useEffect } from 'react'
 import Header from './_components/Header';
 import FList from './_components/FList';
+import { toast } from 'sonner';
 
 function Dashboard() {
  const {user}:any=useKindeBrowserClient();
@@ -24,7 +25,9 @@ function Dashboard() {
      const result= await convex.query(api.user.getTask,{email:user?.email});
 
      if (!result.length) {
-      createUser({email:user?.email,name:user?.given_name,img:user?.picture}).then((res)=>console.log(res))
+      createUser({email:user?.email,name:user?.given_name,img:user?.picture}).then((res)=>{
+        toast("created  successfully !!")
+      })
      }
   }
   return (

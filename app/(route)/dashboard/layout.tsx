@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import SideNav from './_components/SideNav';
 import { ContextFile } from '@/app/contextApi/ContextFile';
+import { ThemeProvider } from '@/components/theme-provider';
 
 export default function DashBoardLayout({ children,
 }: Readonly<{
@@ -35,7 +36,14 @@ export default function DashBoardLayout({ children,
           <SideNav></SideNav>
          </div>
          <div className=' col-span-3'>
+          <ThemeProvider
+           attribute="class"
+           defaultTheme="system"
+           enableSystem
+           disableTransitionOnChange
+          >
          {children}
+         </ThemeProvider>
          </div>
    
    

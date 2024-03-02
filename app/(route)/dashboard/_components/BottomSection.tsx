@@ -43,7 +43,7 @@ function BottomSection({onFileCreate,totalfile}:any) {
       {
         menu.map((item,index)=>{
           return(
-            <div key={index} className='flex cursor-pointer w-full p-1 bg-slate-300 '> 
+            <div key={index} className='flex cursor-pointer w-full p-1 '> 
               <item.icon></item.icon>
               <h1>{item.name}</h1>
             </div>
@@ -74,7 +74,7 @@ function BottomSection({onFileCreate,totalfile}:any) {
 </Dialog>
 
 
-       <div className='h-4  mt-2 mb-1 rounded-full  bg-slate-600 w-full '>
+       <div className='h-4  mt-2 mb-1 rounded-full  w-full '>
        <div className={` h-full rounded-full  bg-blue-600  `} style={{width:`${totalfile&&(totalfile/5)*100}%`}}>
           </div>
        </div>

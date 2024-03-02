@@ -53,7 +53,7 @@ function SideNav() {
   }
 
   return (
-    <div className='flex flex-col bg-gray-300 h-screen  border-r'>
+    <div className='flex flex-col h-screen  border-r'>
       
       <div className='flex-1'>
       <TopSection setTeamInfo={setTeamInfo}></TopSection>
