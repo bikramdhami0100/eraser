@@ -1,11 +1,23 @@
 
-import { LoginLink } from '@kinde-oss/kinde-auth-nextjs'
 import React from 'react'
+import { SparklesCore } from './ui/sparkles'
+
 
 function Hero() {
   return (
-    <section className="bg-gray-900 text-white">
-  <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
+    <section className="bg-gray-900 text-white flex justify-center items-center gap-8">
+          <SparklesCore
+          id="tsparticlesfullpage"
+          background="transparent"
+
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={100}
+          className="w-full h-screen"
+          particleColor="#FFFFFF"
+        />
+       
+  <div className="flex justify-center items-center absolute top-[200px] m-auto">
     <div className="mx-auto max-w-3xl text-center">
       <h1
         className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl"
@@ -34,6 +46,7 @@ function Hero() {
       </div>
     </div>
   </div>
+  
 </section>
   )
 }
