@@ -30,7 +30,7 @@ function Canva({triggersave,fileid,fileData}:{triggersave:any,fileid:any,fileDat
         elements:fileData?.whiteboard&&JSON.parse(fileData?.whiteboard)
     }}
      onChange={(excalidrawElem,
-        appState,files)=>{
+        appState,file)=>{
         setwhiteboardData(excalidrawElem);
      }} 
     />
